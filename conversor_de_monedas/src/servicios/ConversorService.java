@@ -11,12 +11,14 @@ public class ConversorService {
     public JsonObject obtenerTasas() throws Exception {
         String url = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
         String response = ApiClient.get(url);
-        return JsonObject.class.cast(
-                com.google.gson.JsonParser.parseString(response)
-                        .getAsJsonObject()
-                        .getAsJsonObject("coversion_rates")
-        );
+
+        // Parsear correctamente el JSON y extraer el objeto conversion_rates
+        JsonObject json = com.google.gson.JsonParser.parseString(response).getAsJsonObject();
+        JsonObject rates = json.getAsJsonObject("conversion_rates");
+
+        return rates;
     }
+
 
     public JsonObject obtenerTasasCast() throws Exception {
         String url = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
