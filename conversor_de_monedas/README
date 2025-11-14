@@ -1,0 +1,65 @@
+Conversor de Monedas en Java
+
+Este proyecto es un conversor de monedas en Java que utiliza la API de ExchangeRate-API para obtener tasas de conversión actualizadas. Permite convertir entre diferentes monedas, actualizar las tasas y consultar un historial de conversiones realizadas.
+
+Funcionalidades
+
+Obtener tasas de cambio desde la API.
+
+Convertir entre distintas monedas seleccionadas.
+
+Historial de conversiones realizadas.
+
+Código organizado en paquetes: api, servicios, menu, models, util.
+
+Requisitos
+
+Java 17 o superior.
+
+Biblioteca Gson para manejar JSON.
+
+Dependencia HttpClient incluida desde Java 11.
+
+Estructura del proyecto
+src/
+ └── main/
+     └── java/
+         ├── api/
+         ├── menu/
+         ├── models/
+         ├── servicios/
+         └── util/
+
+Ejecución
+
+Compilar el proyecto:
+
+javac Main.java
+
+
+Ejecutar:
+
+java Main
+
+
+Seleccionar una opción del menú:
+
+Realizar conversión
+
+Actualizar tasas
+
+Ver historial
+
+Salir
+
+Configuración de la API
+
+Editar la clave en api/ExchangeRateClient.java:
+
+private static final String API_KEY = "AQUI_TU_API_KEY";
+
+Notas
+
+Las conversiones se calculan utilizando las tasas oficiales devueltas por la API.
+
+El historial se mantiene en memoria durante la ejecución.
