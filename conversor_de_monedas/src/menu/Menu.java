@@ -53,7 +53,9 @@ public class Menu {
                 4) Real brasileño => Dólar
                 5) Dólar => Peso colombiano
                 6) Peso colombiano => Dólar
-                7) Salir
+                -------- EXTRAS ------------
+                7) Ver Historial de conversiones
+                8) Salir
                 
                 Elija una opción válida:
                 ******************************************************
