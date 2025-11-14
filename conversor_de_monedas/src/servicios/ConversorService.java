@@ -1,12 +1,24 @@
 package servicios;
 
 import com.google.gson.JsonObject;
+import modelos.Conversion;
 import util.ApiClient;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ConversorService {
     private static final String API_KEY = "c05a908faa935c534e31a0fe";
+    private JsonObject latestRates;
+    private List<Conversion> historial = new ArrayList<>();
+
+    public ConversorService() {
+    }
+
+    public ConversorService(JsonObject latestRates) {
+        this.latestRates = latestRates;
+    }
 
     public JsonObject obtenerTasas() throws Exception {
         String url = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
