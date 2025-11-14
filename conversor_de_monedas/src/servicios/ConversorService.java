@@ -35,10 +35,10 @@ public class ConversorService {
         System.out.printf("Ingrese el valor en %s: ", from);
         double monto = scanner.nextDouble();
 
-        double fromRate = rates.get(from).getAsDouble();
-        double toRate = rates.get(to).getAsDouble();
+        double tasaOrigen = rates.get(from).getAsDouble();
+        double tasaDestino = rates.get(to).getAsDouble();
 
-        double resultado = (monto / fromRate) * toRate;
+        double resultado = (monto / tasaOrigen) * tasaDestino;
         System.out.printf("%.2f %s equivalen a %.2f %s%n%n", monto, from, resultado, to);
     }
 }
