@@ -25,7 +25,12 @@ public class Menu {
                     case 4 -> conversorService.convertir(scanner, rates, "BRL", "USD");
                     case 5 -> conversorService.convertir(scanner, rates, "USD", "COP");
                     case 6 -> conversorService.convertir(scanner, rates, "COP", "USD");
-                    case 7 -> System.out.println("Gracias por usar el programa de Conversor de monedas :)");
+                    case 7 -> {
+                        System.out.println("\n ==== HISTORIAL DE CONVERSIONES ====");
+                        conversorService.getHistorial().forEach(System.out::println);
+                        break;
+                    }
+                    case 8 -> System.out.println("Gracias por usar el programa de Conversor de monedas :)");
                     default -> System.out.println("Opcion no valida. Intente nuevamente");
                 }
 
