@@ -35,7 +35,7 @@ public class Menu {
                 }
 
 
-            } while (opcion != 7);
+            } while (opcion != 8);
 
         } catch (Exception e) {
             throw new RuntimeException(e);
