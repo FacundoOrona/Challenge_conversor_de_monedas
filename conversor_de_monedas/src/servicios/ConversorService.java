@@ -31,15 +31,6 @@ public class ConversorService {
         return rates;
     }
 
-
-    public JsonObject obtenerTasasCast() throws Exception {
-        String url = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
-        String response = ApiClient.get(url);
-        return (JsonObject) com.google.gson.JsonParser.parseString(response)
-                .getAsJsonObject()
-                .getAsJsonObject("coversion_rates");
-    }
-
     public void convertir (Scanner scanner, JsonObject rates, String from, String to) {
         System.out.printf("Ingrese el valor en %s: ", from);
         double monto = scanner.nextDouble();
