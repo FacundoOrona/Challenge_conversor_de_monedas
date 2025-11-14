@@ -18,3 +18,10 @@ public class Conversion {
         this.fecha = LocalDateTime.now();
     }
 
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        return String.format("[%s] %.2f %s → %.2f %s",
+                fecha.format(formatter), monto, monedaOrigen, resultado, monedaDestino);
+    }
+}
