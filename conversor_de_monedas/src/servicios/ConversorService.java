@@ -40,5 +40,11 @@ public class ConversorService {
 
         double resultado = (monto / tasaOrigen) * tasaDestino;
         System.out.printf("%.2f %s equivalen a %.2f %s%n%n", monto, from, resultado, to);
+
+        historial.add(new Conversion(from, to, monto, resultado));
+    }
+
+    public List<Conversion> getHistorial() {
+        return historial;
     }
 }
